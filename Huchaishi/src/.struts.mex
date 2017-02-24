@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="struts" location="570,10" size="1717,1383">
+    <action name="login" location="1565,87" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="logout" location="1565,752" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="addtask" location="1320,742" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listtask.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="sendtask.jsp" />
+      </result>
+    </action>
+    <action name="gettask" location="1075,752" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="gettask.jsp" />
+      </result>
+    </action>
+    <action name="goindex" location="585,752" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="listcenter" location="340,752" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="center.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="searchConsume" location="340,647" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="listTask" location="95,647" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="goregiser" location="95,542" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="register.jsp" />
+      </result>
+    </action>
+    <action name="gotaskList" location="95,437" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="listtask.jsp" />
+      </result>
+    </action>
+    <action name="gosendtask" location="830,437" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="sendtask.jsp" />
+      </result>
+    </action>
+    <action name="wdset" location="830,332" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="WDapplication.jsp" />
+      </result>
+    </action>
+    <action name="alteruser" location="830,227" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="center.jsp" />
+      </result>
+    </action>
+    <action name="userboundtos" location="585,227" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="bound_storelist.jsp" />
+      </result>
+    </action>
+    <action name="updatauser" location="80,190" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="alter_user.jsp" />
+      </result>
+    </action>
+    <action name="taskmoney" location="40,290" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="task_money.jsp" />
+      </result>
+    </action>
+    <action name="goldbuy" location="40,490" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="gold_buy.jsp" />
+      </result>
+    </action>
+    <action name="boundstore" location="40,740" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="bound_store.jsp" />
+      </result>
+    </action>
+    <action name="boundacount" location="40,840" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="bound_acount.jsp" />
+      </result>
+    </action>
+    <action name="boundstorelist" location="40,940" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="bound_storelist.jsp" />
+      </result>
+    </action>
+    <action name="boundacountlist" location="40,1040" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="bound_acountlist.jsp" />
+      </result>
+    </action>
+    <action name="goldchange" location="40,1140" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="gold_change.jsp" />
+      </result>
+    </action>
+    <action name="goldrecord" location="40,1240" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="gold_record.jsp" />
+      </result>
+    </action>
+    <action name="gold2money" location="40,1340" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="WDapplication.jsp" />
+      </result>
+    </action>
+    <action name="pay" location="12,362" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pay.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/page/web/index.jsp" location="1125,997" size="150,55" />
+  <webResource name="listtask.jsp" path="/page/web/listtask.jsp" location="215,402" size="150,55" />
+  <webResource name="sendtask.jsp" path="/page/web/sendtask.jsp" location="1370,927" size="150,55" />
+  <webResource name="gettask.jsp" path="/page/web/gettask.jsp" location="1615,857" size="150,55" />
+  <webResource name="center.jsp" path="/page/web/center.jsp" location="75,122" size="150,55" />
+  <webResource name="register.jsp" path="/page/web/register.jsp" location="355,507" size="150,55" />
+  <webResource name="WDset.jsp" path="/page/web/WDset.jsp" location="355,297" size="150,55" />
+  <webResource name="bound_storelist.jsp" path="/page/web/bound_storelist.jsp" location="355,192" size="150,55" />
+  <webResource name="WDapplication.jsp" path="/page/web/WDapplication.jsp" location="50,500" size="150,55" />
+  <webResource name="alter_user.jsp" path="/page/web/alter_user.jsp" location="50,650" size="150,55" />
+  <webResource name="task_money.jsp" path="/page/web/task_money.jsp" location="350,650" size="150,55" />
+  <webResource name="gold_buy.jsp" path="/page/web/gold_buy.jsp" location="50,800" size="150,55" />
+  <webResource name="bound_store.jsp" path="/page/web/bound_store.jsp" location="350,800" size="150,55" />
+  <webResource name="bound_acount.jsp" path="/page/web/bound_acount.jsp" location="50,950" size="150,55" />
+  <webResource name="bound_acountlist.jsp" path="/page/web/bound_acountlist.jsp" location="50,1100" size="150,55" />
+  <webResource name="gold_change.jsp" path="/page/web/gold_change.jsp" location="350,950" size="150,55" />
+  <webResource name="gold_record.jsp" path="/page/web/gold_record.jsp" location="350,1100" size="150,55" />
+  <webResource name="pay.jsp" path="/page/web/pay.jsp" location="50,1250" size="150,55" />
+</Struts2Diagram>
+

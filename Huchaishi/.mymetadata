@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Huchaishi"
+  id="myeclipse.1466520465252"
+  context-root="/Huchaishi"
+  j2ee-spec="5.0"
+  archive="Huchaishi.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,72 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0039)http://www.xyxshdq.com/member/login.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    
+    <title>互差事</title>
+    <link rel="stylesheet" type="text/css" href="./css/login-new.css">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+</head>
+<body>
+<div class="wrapper" style="opacity: 1;">
+    <table width="100%" style="height: 100%" align="center" background="./img/6.jpg">
+        <tbody>
+        <tr>
+            <td align="center" valign="middle">
+                <div id="dlogin">
+                    <div class="head">
+                        <a href="#"><span class="logo" style="background:url(./img/logo.png) no-repeat"></span></a>
+                        <span class="slogan"></span>
+                    </div>
+                    <div class="loginc">
+                        <form action="adminlogin.action" method="post">
+                            <input name="forward" type="hidden" value="#">
+                            <div id="userentry">
+                                <ul id="login_list">
+                                    <li class="shuru">
+                                        <input type="text" maxlength="26" name="username" class="r_bk" placeholder="用户名" id="lusername" style="margin-left: 0px;">
+                                        <p class="zq" id="miaoname"></p>
+                                    </li>
+                                    <li class="shuru">
+                                        <input type="password" maxlength="16" name="password" placeholder="密码" class="r_bk" id="lpassword">
+                                        <p id="miaopwd" class="zq"></p>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                            <div class="login_btn">
+                            	<br/>
+                            	<s:if test="#message ! = null">
+                            		<span class="f_red">${message }</span>
+                            	</s:if>
+                            	
+                            	<br/>
+                                <input type="submit" name="submit" value="" id="login_btn">
+                            </div>
+                            <div id="logincontr">
+                               
+                                <div class="others">
+                                   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    /*  淡入淡出  */
+    $(function(){
+        $(".wrapper").css("opacity",0).delay(400).animate({opacity:1},400);
+    });
+</script>
+
+</body></html>

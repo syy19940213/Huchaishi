@@ -1,0 +1,1 @@
+var DTPath = "http://www.jiuaishua.com/";var SKPath = "http://www.jiuaishua.com/skin/ypmili/";var MEPath = "http://www.jiuaishua.com/member/";var EXPath = "http://www.jiuaishua.com/extend/";var CKDomain = "";var CKPath = "/";var CKPrex = "cde_";

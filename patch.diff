@@ -1,0 +1,166 @@
+diff --git a/html/Register.html b/html/Register.html
+index d072e91..6ad9a00 100644
+--- a/html/Register.html
++++ b/html/Register.html
+@@ -21,92 +21,21 @@ var $=function(tagName)
+ {
+ return document.getElementById(tagName);
+ }
+-//邮箱检测------------------------------------------------------------------------------4
+-function check_idea15(s)
+-{
+-var reEmail=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+-var b_email=reEmail.test(s);
+-if(b_email)
+-{
+-   $("span_15").innerHTML="<img src='./img/right.png'>";
+-}
+-else
+-{
+-   $("span_15").innerHTML="<img src='./img/yesno.gif'>&nbsp;邮箱不可用";
+-}
+-}
+-//整数检测------------------------------------------------------------------------------4
+-function check_AboutSequence(s)
+-{
+-var reNum=/^[0-9]{1,20}$/;
+-var b_Num=reNum.test(s);
+-if(b_Num)
+-{
+-   $("span_Sequence").innerHTML="<img src='./img/right.png'>";
+-   flag1[1]=1;
+-}
+-else
+-{
+-   $("span_Sequence").innerHTML="<img src='./img/yesno.gif'>&nbsp;请填写整数";
+-   flag1[1]=0;
+-}
+-check_data1();
+-}
+-var flag8=[0,0,0];
+-function check_ProductName(s)
+-{
+-if(s=="")
+-{
+-   $("span_ProductName").innerHTML="<img src='./img/yesno.gif'>&nbsp;请输入产品名称";
+-   flag8[0]=0;
+-}
+-else
+-{
+-   $("span_ProductName").innerHTML="<img src='./img/right.png'>";
+-   flag8[0]=1;
+-}
+-check_data8();
+-}
+ 
+-function check_ProductID(s)
+-{
+-if(s=="")
+-{
+-   $("span_ProductID").innerHTML="<img src='./img/yesno.gif'>&nbsp;请输入产品编号";
+-   flag8[2]=0;
+-}
+-else
+-{
+-   $("span_ProductID").innerHTML="<img src='./img/right.png'>";
+-   flag8[2]=1;
+-}
+-check_data8();
+-}
+-//---------------------检查QQ不能为空
+-function check_QQ(s)
++//用户信息检测------------------------------------------------------------------------------4
++var flag4=[0,0,0];
++function check_UserName(obj)
+ {
+-if(s=="")
++if(obj=="")
+ {
+-   $("span_QQ").innerHTML="请输入QQ";
+-   flag8[3]=0;
++   $("span_UserName").innerHTML="请输入QQ";
++   flag4[0]=0;
+ }else{
+-   $("span_QQ").innerHTML="<img src='./img/right.png'>";
+-   flag8[3]=1;
++   $("span_UserName").innerHTML="<img src='./img/right.png'>";
++   flag4[0]=1;
+ }
+-check_data8();
+ }
+ 
+-function check_data8() //-------判断上面三项有没有填写，如果没有填写完整则“确定添加”按钮不可视
+-{
+-if(flag8[0]==1 && flag8[2]==1&& flag8[3]==1){
+-   $("Btn_OK").disabled=false;
+-}
+-else{
+-   $("Btn_OK").disabled=true;
+-}
+-}
+-//用户信息检测------------------------------------------------------------------------------4
+-var flag4=[0,0,0];
+ function check_Password(obj){
+ var pwd=$("Password").value;
+ var reChinese=/[\u0391-\uFFE5]+/;
+@@ -175,12 +104,32 @@ function check_vPassword(){
+     }
+    }
+ }
++//---------------------检查QQ不能为空
++function check_QQ(s)
++{
++if(s=="")
++{
++   $("span_QQ").innerHTML="请输入QQ";
++   flag4[4]=0;
++}else{
++   $("span_QQ").innerHTML="<img src='./img/right.png'>";
++   flag4[4]=1;
++}
++}
+ 
++function check_reg_btn()
++{
++if(flag4[0]==1 && flag4[1]==1&& flag4[2]==1 &&  flag4[4]==1 ){	
++}else{
++alert("请确认填写完整");
++}
++	
++}
+     //---------用户名合法性检测
+ /* ======ajax.js 检测是否被注册过================BEGIN*/
+ // JavaScript Document
+ //--------------------------------------------------------------------
+-    </script>
++</script>
+ </head>
+ <body>
+ <div class="wrapper" style="opacity: 1;">
+@@ -208,8 +157,8 @@ function check_vPassword(){
+                                     
+                                     <li>
+                                         <p class="title">会员名</p>
+-                                        <input id="username" maxlength="20" name="post[username]" class="r_bk" type="text" onblur="validator(this);" data-hasqtip="0" oldtitle="4-20个字符，只能使用小写字母(a-z)、数字(0-9)、下划线(_)、中划线(-)，且以字母或数字开头和结尾" title="">
+-                                        <span><table class="zq"><tbody><tr><td>会员名应为小写字母(a-z)、数字(0-9)、下划线(_)、中划线(-)组合</td></tr></tbody></table></span>
++                                        <input id="UserName" maxlength="20" name="UserName" class="r_bk" type="text" onblur="check_UserName(this.value);">                                        
++										 <span id='span_UserName' class="zq">会员名应为小写字母(a-z)、数字(0-9)、下划线(_)、中划线(-)组合</span>
+                                     </li>
+                                     <li>
+                                         <p class="title">登录密码</p>
+@@ -254,12 +203,11 @@ function check_vPassword(){
+                              
+                                     <li>
+                                         <p class="title">推荐人</p>
+-                                                                                <input maxlength="15" name="post[ypinviter]" class="r_bk" type="text" data-hasqtip="8" oldtitle="没有可以不填" title="">
++                                           <input maxlength="15" name="post[ypinviter]" class="r_bk" type="text" data-hasqtip="8" oldtitle="没有可以不填" title="">
+                                                                             </li>
+                                 
+-                                    <li>
+-										<!-- <input type='submit' name='Btn_OK' id='Btn_OK' disabled='disabled' value='确认添加' class='button'>-->
+-                                        <input name="submit" class="reg_btn" value="" type="submit" style="margin-right: 20px;">
++                                    <li>									
++                                        <input   name="submit"  class="reg_btn" id='reg_btn'onclick='check_reg_btn();' value="" type="submit" style="margin-right: 20px;">
+                                         <table>
+                                             <tbody><tr>
+                                                 <td><a href="#">已有账号，登录 &gt;&gt;</a></td>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.multipart.maxSize" value="20480000" />
+	<constant name="struts.multipart.saveDir" value="E:/apache-tomcat-7.0.65-windows-x64" />
+	<package name="struts" extends="struts-default,json-default">
+	
+	<action name="sendcheackNum"
+			class="com.huchaishi.action.web.user.SendCheackNumAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	
+		<action name="login" class="com.huchaishi.action.web.user.LoginAction">
+			<result name="success">/page/web/index.jsp</result>
+			<result name="error">/page/web/index.jsp</result>
+		</action>
+		<action name="logout" class="com.huchaishi.action.web.user.LogoutAction">
+			<result name="success">/page/web/index.jsp</result>
+			<result name="error">/page/web/index.jsp</result>
+		</action>
+
+		<action name="deltask" class="com.huchaishi.action.web.task.DelTaskAction">
+			<result name="success">/page/web/task_center.jsp</result>
+		</action>
+		
+		<action name="gofogetPage">
+			<result name="success">/page/web/forgetPassword.jsp</result>
+		</action>
+		
+		<action name="forgetPassword" class = "com.huchaishi.action.web.user.ForgetPasswordAction">
+			<result name="success">/page/web/forgetPassword.jsp</result>
+		</action>
+		
+		<action name="addtask" class="com.huchaishi.action.web.task.AddTaskAction">
+			<result name="success"  type="redirect">gotaskcenter.action</result>
+			<result name="error">/page/web/sendtask.jsp</result>
+		</action>
+		
+		
+		<action name="taskreviewd" class="com.huchaishi.action.web.task.TaskReviewdAction">
+			<result name="success">/page/web/task_center.jsp</result>
+		</action>
+
+		<action name="gotaskgoldrecord" class="com.huchaishi.action.web.link.TaskGoldRecordList">
+			<result name="success">/page/web/taskgold_record.jsp</result>
+		</action>
+	
+		<action name="gettask" class="com.huchaishi.action.web.task.GetTaskAction">
+			<result name="success">/page/web/gettask.jsp</result>
+		</action>
+		
+		<action name="successTask" class="com.huchaishi.action.web.task.SuccessTaskAction">
+			<result name="success">/page/web/task_center_get.jsp</result>
+		</action>
+		
+	
+		
+		<action name="showtask" class="com.huchaishi.action.web.task.GetTaskAction">
+			<result name="success">/page/web/showtask.jsp</result>
+		</action>
+		
+		<action name="recivertask" class="com.huchaishi.action.web.task.ReciverTaskAction">
+		
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+			<!--<result name="success">/page/web/task_center_get.jsp</result>
+			<result name="error">/page/web/gettask.jsp</result>  -->
+			
+		</action>
+
+		<action name="goindex">
+			<result name="success">/page/web/index.jsp</result>
+		</action>
+
+		<action name="listcenter" class="com.huchaishi.action.web.link.ListrcenterAction">
+			<result name="success">/page/web/center.jsp</result>
+			<result name="error">/page/web/index.jsp</result>
+		</action>
+
+		<action name="searchConsume"
+			class="com.huchaishi.action.web.task.FindAllTaskBaseAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="listTask" class="com.huchaishi.action.web.task.ListTaskAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="goregiser" class="com.huchaishi.action.web.user.CheackRecommendUserAction">
+			<result name="success">/page/web/register.jsp</result>
+		</action>
+
+		<action name="gotaskList" class="com.huchaishi.action.web.task.FindArticleAction">
+			<result name="success">/page/web/listtask.jsp</result>
+		</action>
+
+		<action name="gosendtask" class ="com.huchaishi.action.web.task.GetUserAccountAction">
+			<result name="success">/page/web/sendtask.jsp</result>
+		</action>
+		<action name="amountrecord" class="com.huchaishi.action.web.link.GetGoldRecordAction">
+			<result name="success">/page/web/WDrecord.jsp</result>
+		</action>
+
+		<action name="wdset" class="com.huchaishi.action.web.link.WDsetAction">
+			<result name="success">/page/web/WDapplication.jsp</result>
+		</action>
+		<action name="alteruser" class="com.huchaishi.action.web.link.AlterUserAction">
+			<result name="success">/page/web/center.jsp</result>
+			<result name="error">/page/web/alter_user.jsp</result>
+		</action>
+		<action name="userboundtos"
+			class="com.huchaishi.action.web.check.UserBoundtosAction">
+			<result name="success">/page/web/bound_storelist.jsp</result>
+		</action>
+		<action name="updatauser" class="com.huchaishi.action.web.link.UpadataUserAction">
+			<result name="success">/page/web/alter_user.jsp</result>
+		</action>
+		<action name="taskmoney" class="com.huchaishi.action.web.link.TaskMoneyAction">
+			<result name="success">/page/web/task_money.jsp</result>
+		</action>
+		<action name="gogoldbuy" >
+			<result name="success">/page/web/gold_buy.jsp</result>
+		</action>
+		
+		
+		
+		<action name="goldbuy" class="com.huchaishi.action.web.link.GoldBuyAction">
+			<result name="success">/page/web/gotoarticle.jsp</result>
+			<result name="error" type="redirect">gogoldbuy.action</result>
+		</action>
+		
+		
+		<action name="changemoney" class="com.huchaishi.action.web.check.AmountAction">
+			<result name="success" type="redirect">listcenter.action</result>
+		</action>
+		<action name="boundstore" class="com.huchaishi.action.web.link.BoundStoreAction">
+			<result name="success" type="redirect">boundstorelist.action</result>
+			<result name="error" type="redirect">boundstorelist.action</result>
+		</action>
+		<action name="boundAcount" class="com.huchaishi.action.web.link.BoundAcountAction">
+			<result name="success" type="redirect">boundacountlist.action</result>
+			<result name="error" type="redirect">boundacountlist.action</result>
+		</action>
+		<action name="boundstorelist"	class="com.huchaishi.action.web.link.BoundStroeListAction">
+			<result name="success">/page/web/bound_storelist.jsp</result>
+		</action>
+		
+		<action name="deletboundstore"
+			class="com.huchaishi.action.web.link.BoundStoreDelAction">
+			<result name="success">/page/web/bound_storelist.jsp</result>
+		</action>
+		
+		<action name="delboundaccount"
+			class="com.huchaishi.action.web.link.BoundAccountDelAciton">
+			<result name="success">/page/web/bound_acountlist.jsp</result>
+		</action>
+		
+		<action name="register"
+			class="com.huchaishi.action.web.user.RegisterAction">
+			<result name="success">/page/web/index.jsp</result>
+			<result name="error">/page/web/register.jsp</result>
+		</action>
+		
+		<action name="boundacountlist"
+			class="com.huchaishi.action.web.link.BoundAcountListAction">
+			<result name="success">
+				/page/web/bound_acountlist.jsp
+			</result>
+		</action>
+		<action name="goldchange" class="com.huchaishi.action.web.link.GoldChangeAction">
+			<result name="success">/page/web/gold_change.jsp</result>
+		</action>
+		<action name="goldrecord" class="com.huchaishi.action.web.link.GoldRecordrAction">
+			<result name="success">/page/web/gold_record.jsp</result>
+		</action>
+		<action name="gold2money">
+			<result name="success">/page/web/WDapplication.jsp</result>
+		</action>
+
+		<action name="goboundstore">
+			<result name="success">/page/web/bound_store.jsp</result>
+		</action>
+		<action name="goboundaccount">
+			<result name="success">/page/web/bound_acount.jsp</result>
+		</action>
+		
+		<action name="gotaskcenter" class="com.huchaishi.action.web.task.GetSendTaskList">
+			<result name="success">/page/web/task_center.jsp</result>
+		</action>
+		<action name="gotaskcenterget" class="com.huchaishi.action.web.task.GetGetTaskList">
+			<result name="success">/page/web/task_center_get.jsp</result>
+		</action>
+		<action name="deltaskgetrecord" class="com.huchaishi.action.web.task.DelTaskGetRecord">
+			<result name="success">/page/web/task_center_get.jsp</result>
+		</action>
+
+		<action name="pay"	class="com.huchaishi.action.web.link.PayAction">
+			<result name="success">/page/web/pay.jsp</result>
+		</action>
+		<action name="buytaskmoney"	class="com.huchaishi.action.web.link.BuyTaskGoldAction">
+			<result name="success" type="redirect">goldchange.action</result>
+			<result name="error">/page/web/gold_change.jsp</result>
+		</action>
+		<action name="amount" class="com.huchaishi.action.web.check.AmountAction">
+			<result name="success">/page/web/WDapplication.jsp</result>
+		</action>
+		<action name="gonoticecenter" class="com.huchaishi.action.admin.ListArticleAction">
+			<result name="success">/page/web/notice_center.jsp</result>
+		</action>
+		
+		<action name="goaddArticle">
+			<result name="success">/page/admin/addarticle.jsp</result>
+		</action>
+		
+		<action name="goListArticle" class="com.huchaishi.action.admin.ListArticleAction">
+			<result name="success">/page/admin/listArticle.jsp</result>
+		</action>
+		
+		<action name="addArticle" class="com.huchaishi.action.admin.AddArticleAction">
+			<result name="success">/page/admin/listArticle.jsp</result>
+		</action>
+		
+		
+		<action name="delArticle" class="com.huchaishi.action.admin.DelArticleAction">
+			<result name="success">/page/admin/listArticle.jsp</result>
+		</action>
+		
+		<action name="showArticle" class="com.huchaishi.action.admin.ShowArticleAction">
+			<result name="success">/page/web/showNotice.jsp</result>
+		</action>
+		
+		<action name="deltasksendrecord" class="com.huchaishi.action.web.task.DelTaskSendRecord">
+			<result name="success">/page/web/task_center.jsp</result>
+		</action>
+		
+		
+		
+		
+		<!-- 后台监听 -->
+		<action name="goaccountlist" class="com.huchaishi.action.admin.ListBoundAccountAction">
+			<result name="success">/page/admin/accountManage.jsp</result>
+		</action>
+		<action name="passaccount" class="com.huchaishi.action.admin.PassAccountAction">
+			<result name="success">/page/admin/accountManage.jsp</result>
+			<result name="error">/page/admin/accountManage.jsp</result>
+		</action>
+		<action name="gotaskmangelist" class="com.huchaishi.action.admin.ListTaskBaseAction">
+			<result name="success">/page/admin/taskManage.jsp</result>
+		</action>
+		<action name="goeditTaskBase" class="com.huchaishi.action.admin.EidtTaskBaseAction">
+			<result name="success">/page/admin/editTaskBase.jsp</result>
+		</action>
+		
+		<action name="updateTaskBase" class="com.huchaishi.action.admin.UpdateTaskBaseAction">
+			<result name="success">/page/admin/taskManage.jsp</result>
+		</action>
+		
+		<action name="goUserGoldList" class="com.huchaishi.action.admin.ListUserGoldAction">
+			<result name="success">/page/admin/usergoldList.jsp</result>
+		</action>
+		
+		<action name="goeditusergold" class="com.huchaishi.action.admin.EditUseGoldAction">
+			<result name="success">/page/admin/editUserGold.jsp</result>
+		</action>
+		<action name="updateUserGold" class="com.huchaishi.action.admin.UpdateUserGoldAction">
+			<result name="success" type="redirect">goUserGoldList.action</result>
+		</action>
+		
+		<action name="gorecodeList" class="com.huchaishi.action.admin.ListGoldRecodeAciton">
+			<result name="success">/page/admin/goldrecodeList.jsp</result>
+		</action>
+		<action name="passgoldrecode" class="com.huchaishi.action.admin.PassGoldRecodeAction">
+			<result name="success">/page/admin/goldrecodeList.jsp</result>
+			<result name="error">/page/admin/goldrecodeList.jsp</result>
+		</action>
+		<action name="notpassgoldrecode" class="com.huchaishi.action.admin.NotPassGoldRecodeAction">
+			<result name="success">/page/admin/goldrecodeList.jsp</result>
+			<result name="error">/page/admin/goldrecodeList.jsp</result>
+		</action>
+		
+		<action name="admin">
+			<result name="success">/page/admin/adminlogin.jsp</result>
+		</action>
+		<action name="gochangePassword">
+			<result name="success">/page/admin/changeadminPassword.jsp</result>
+		</action>
+		
+		<action name="changeAdminPassword" class="com.huchaishi.action.admin.ChangeAdminPasswordAction">
+			<result name="success">/page/admin/changeadminPassword.jsp</result>
+			<result name="error">/page/admin/changeadminPassword.jsp</result>
+		</action>
+		
+		<action name="adminlogin" class="com.huchaishi.action.admin.AdminUserLoginAction">
+			<result name="success">/page/admin/index.jsp</result>
+			<result name="error">/page/admin/adminlogin.jsp</result>
+		</action>
+		
+		<action name="gostorelist" class="com.huchaishi.action.admin.ListBoundStoreAction">
+			<result name="success">
+				/page/admin/storeManage.jsp
+			</result>
+		</action>
+		<action name="passstore" class="com.huchaishi.action.admin.PassStoreAction">
+			<result name="success">/page/admin/storeManage.jsp</result>
+			<result name="error">/page/admin/storeManage.jsp</result>
+		</action>
+		
+		<action name="notpassstore" class="com.huchaishi.action.admin.NotPassStoreAction">
+			<result name="success">/page/admin/storeManage.jsp</result>
+			<result name="error">/page/admin/storeManage.jsp</result>
+		</action>
+		
+		<action name="notpassaccount" class="com.huchaishi.action.admin.NotPassAccountAction">
+			<result name="success">/page/admin/accountManage.jsp</result>
+			<result name="error">/page/admin/accountManage.jsp</result>
+		</action>
+		<action name="addblackuser" class="com.huchaishi.action.admin.AddBlackUserAction">
+			<result name="success">/page/admin/usergoldList.jsp</result>
+		</action>
+		
+		<action name="delblackuser" class="com.huchaishi.action.admin.DelBlackuserAction">
+			<result name="success">/page/admin/usergoldList.jsp</result>
+		</action>
+		
+		<action name="gopassTaskList" class="com.huchaishi.action.admin.FindNeedPassTaskAction">
+			<result name="success">/page/admin/passTaskList.jsp</result>
+		</action>
+		<action name="passtask" class="com.huchaishi.action.admin.PassTaskAction">
+			<result name="success">/page/admin/passTaskList.jsp</result>
+		</action>
+		
+		<action name="gopassHuzhutask" class="com.huchaishi.action.admin.PassHuzhuTaskAction">
+			<result name="success">/page/admin/passTaskList.jsp</result>
+		</action>
+		
+		<action name="setToArticle" class="com.huchaishi.action.admin.UpdateToArticle">
+			<result name="success">/page/admin/setBuyGoldToArticle.jsp</result>
+		</action>
+		
+		<action name="goSystemList" class="com.huchaishi.action.admin.GoUpdateToArticle">
+			<result name="success">/page/admin/setBuyGoldToArticle.jsp</result>
+		</action>
+		
+		<action name="gourl" class="com.huchaishi.action.web.GoUrlAction">
+			<result name="success">/page/web/url.jsp</result>
+		</action>
+		
+		<action name="findAllNum" class="com.huchaishi.action.admin.FindAllNumAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<!-- 新添加 -->
+		<action name="goUserManage">
+			<result name="success">/page/web/userManage.jsp</result>
+		</action>
+		
+		<action name="goAdminUserManage" class="com.huchaishi.action.admin.ListUserMemberApplyAction">
+			<result name="success">/page/admin/userMemberManage.jsp</result>
+		</action>
+		
+		<action name="setUserMember" class="com.huchaishi.action.admin.SetUserMemberAction">
+			<result name="success">/page/admin/userMemberManage.jsp</result>
+		</action>
+		
+		<action name="removeUserMember" class="com.huchaishi.action.admin.RemoveUserMemberAction">
+			<result name="success" type="redirect">goUserGoldList.action</result>
+		</action>
+		
+		<action name="userApply" class="com.huchaishi.action.web.user.ApplyUserMemberAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		
+		<action name="delHelpTaskAction" class="com.huchaishi.action.admin.DelHelpTaskAction">
+			<result name="success" type="redirect">gopassTaskList.action</result>
+		</action>
+		
+		<action name="goupdatatask" class="com.huchaishi.action.web.task.GoUpdataTask">
+			<result name="success">/page/web/updatatask.jsp</result>
+		</action>
+		
+		<action name="updatatask" class="com.huchaishi.action.web.task.UpdataTaskAction">
+			<result name="success" type="redirect">gotaskcenter.action</result>
+		</action>
+		
+		<action name="toptask" class="com.huchaishi.action.web.task.TopTaskAction">
+			<result name="success" type="redirect">gotaskcenter.action</result>
+		</action>
+		
+		
+		<action name="cheakistop" class="com.huchaishi.action.web.task.CheackIsTopAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="findAccount" class="com.huchaishi.action.web.task.FindAccountAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="findTaskById" class="com.huchaishi.action.web.task.FindTaskByIdAction">
+			<!-- 返回json类型数据 -->
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="goalterArticle" class="com.huchaishi.action.admin.GoAlterArticleAction">
+			<result name="success">/page/admin/editArticle.jsp</result>
+		</action>
+		
+		<action name="editArticle" class="com.huchaishi.action.admin.EditArticleAction">
+			<result name="success" type="redirect">goListArticle.action</result>
+		</action>
+		
+		<action name="delUser" class="com.huchaishi.action.admin.DelUserAction">
+			<result name="success" type="redirect">goUserGoldList.action</result>
+		</action>
+		
+	</package>
+
+</struts>    
